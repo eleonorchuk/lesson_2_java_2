@@ -26,6 +26,14 @@ public class Main {
         System.out.println("testInvertNumberSign returned " + result );
         result = testInvertNumberSign(rnd.nextInt(30) - 15);
         System.out.println("testInvertNumberSign returned " + result );
+
+        // test task 4
+        printStringNTimes("Java KOOL", 3);
+        printStringNTimes("Java HARD", -1);
+        printStringNTimes("Java Difficult", 0);
+        printStringNTimes("Java it is interesting", 10);
+        printStringNTimes("I love Java", rnd.nextInt(5) - 2);
+
     }
 
     /*
@@ -71,5 +79,17 @@ public class Main {
 
         return a < 0;
     }
+
+    /*
+    4. Написать метод, которому в качестве аргументов передается строка и число, метод должен отпечатать в консоль
+    указанную строку, указанное количество раз;
+    */
+    public static void printStringNTimes(String s, int a) {
+        System.out.println("printStringNTimes");
+        System.out.println("a = " + a);
+        for(int i = 0; i < a; i++)
+            System.out.println(s);
+    }
+
 }
 
