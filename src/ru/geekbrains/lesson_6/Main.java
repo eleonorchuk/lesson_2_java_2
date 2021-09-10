@@ -34,6 +34,23 @@ public class Main {
         printStringNTimes("Java it is interesting", 10);
         printStringNTimes("I love Java", rnd.nextInt(5) - 2);
 
+        // test task 5
+        result = detectLeapYear(2001);
+        System.out.println("detectLeapYear returned " + result );
+        result = detectLeapYear(-3);
+        System.out.println("detectLeapYear returned " + result );
+        result = detectLeapYear(4);
+        System.out.println("detectLeapYear returned " + result );
+        result = detectLeapYear(300);
+        System.out.println("detectLeapYear returned " + result );
+        result = detectLeapYear(1200);
+        System.out.println("detectLeapYear returned " + result );
+        result = detectLeapYear(2021);
+        System.out.println("detectLeapYear returned " + result );
+        result = detectLeapYear(2024);
+        System.out.println("detectLeapYear returned " + result );
+        result = detectLeapYear(2000 + rnd.nextInt(30));
+        System.out.println("detectLeapYear returned " + result );
     }
 
     /*
@@ -91,5 +108,30 @@ public class Main {
             System.out.println(s);
     }
 
+    /*
+    5. * Написать метод, который определяет, является ли год високосным, и возвращает boolean (високосный - true,
+    не високосный - false). Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й –високосный.
+    */
+    public static boolean isValueDiv(int a, int div) {
+        int d = a / div;
+        d *= div;
+        return d == a;
+    }
+
+    public static boolean detectLeapYear(int year) {
+        System.out.println("detectLeapYear");
+        System.out.println("year = " + year);
+
+        if (year < 4)
+            return false;
+
+        if (isValueDiv(year, 400))
+            return true;
+
+        if (isValueDiv(year, 100))
+            return false;
+
+        return isValueDiv(year, 4);
+    }
 }
 
