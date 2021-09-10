@@ -6,20 +6,23 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Random rnd = new Random();
-        boolean result = test_sum_between_10_20(0,20);
-        System.out.println("test_sum_between_10_20 returned " + result );
-        result = test_sum_between_10_20(23,23);
-        System.out.println("test_sum_between_10_20 returned " + result );
-        result = test_sum_between_10_20(rnd.nextInt(30), rnd.nextInt(30));
-        System.out.println("test_sum_between_10_20 returned " + result );
+        boolean result = testSumBetween1020(0,20);
+        System.out.println("testSumBetween1020 returned " + result );
+        result = testSumBetween1020(23,23);
+        System.out.println("testSumBetween1020 returned " + result );
+        result = testSumBetween1020(rnd.nextInt(30), rnd.nextInt(30));
+        System.out.println("testSumBetween1020 returned " + result );
+        printNumberSign(20);
+        printNumberSign(-120);
+        printNumberSign(rnd.nextInt(100) - 50);
     }
 
     /*
     1. Написать метод, принимающий на вход два целых числа и проверяющий, что их сумма лежит в пределах от 10 до 20
     (включительно), если да – вернуть true, в противном случае – false.
     */
-    public static boolean test_sum_between_10_20(int a, int b) {
-        System.out.println("test_sum_between_10_20");
+    public static boolean testSumBetween1020(int a, int b) {
+        System.out.println("testSumBetween1020");
         System.out.println("a = " + a);
         System.out.println("b = " + b);
         int sum = a + b;
@@ -31,5 +34,19 @@ public class Main {
         }
         System.out.println("false");
         return false;
+    }
+
+    /*
+    2. Написать метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль,
+    положительное ли число передали или отрицательное. Замечание: ноль считаем положительным числом.
+    */
+    public static void printNumberSign(int a) {
+        System.out.println("printNumberSign");
+        System.out.println("a = " + a);
+        
+        if (a >= 0)
+            System.out.println("Положительное число");
+        else
+            System.out.println("Отрицательное число");
     }
 }
